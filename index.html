@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Typofolio - Sample Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@400..700&family=Jersey+10&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Momo+Signature&family=Momo+Trust+Display&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap"
-        rel="stylesheet">
-        
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typofolio - Sample Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@400..700&family=Jersey+10&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Momo+Signature&family=Momo+Trust+Display&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-    <div id="container" class="w-[100vw] min-h-[100vh] text-white flex justify-center items-center font-bold">
-        <h1 id="name"></h1>
-    </div>
-    <div class="bg-zinc-300 h-[100vh] w-[0vw] absolute top-0 flex justify-center items-center" id="canvas_display">
-        <h1 id="credit" class="opacity-0 text-black text-center"> <small class="caveat-two"> Created By </small><br><span class="saira-two"> Typofolio - <span id="current-year"></span></span></h1>
-    </div>
+<body class="overflow-hidden">
+  <!-- Main Name Container -->
+  <div id="container" class="w-[100vw] min-h-[100vh] text-white flex justify-center items-center font-bold">
+    <h1 id="name"></h1>
+  </div>
+
+  <!-- Canvas Display -->
+  <div class="bg-zinc-300 h-[100vh] w-[0vw] absolute top-0 flex justify-center items-center transition-all duration-700 ease-in-out" id="canvas_display">
+    <h1 id="credit" class="opacity-0 text-black text-center transition-all duration-700 ease-in-out">
+      <small class="font-[Caveat]">Created By</small><br>
+      <span class="font-[Saira]">Typofolio - <span id="current-year"></span></span>
+    </h1>
+  </div>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script> 
 </html>

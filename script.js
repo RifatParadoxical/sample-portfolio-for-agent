@@ -1,67 +1,59 @@
-// declaring name and font size:
+// === INITIAL SETUP ===
 var nickname = "Rifat";
-var splitNumber = nickname.split('')
-var initialWordWidth = 100 / splitNumber.length
+var splitNumber = nickname.split('');
+var initialWordWidth = 100 / splitNumber.length;
 var Name = document.getElementById('name');
-Name.classList.add(`text-[${initialWordWidth}vw]`)
-Name.innerText = nickname
-var bgColorInit = "bg-zinc-900"
-var bgColorPost = "bg-slate-950"
-var container = document.getElementById("container")
-container.classList.add(bgColorInit)
-// font families declaration: 
+Name.classList.add(`text-[${initialWordWidth}vw]`);
+Name.innerText = nickname;
+
+var container = document.getElementById("container");
+container.classList.add("bg-zinc-900");
+
+var cd = document.getElementById("canvas_display");
+var credit = document.getElementById("credit");
+
+// === FONT LIST (Google Fonts) ===
 var fonts = [
-    "momo-trust-display-regular",
-    "momo-signature-regular",
-    "playfair-display-two",
-    "lobster-two-bold-italic",
-    "noto-serif-two",
-    "saira-two",
-    "josefin-sans-two",
-    "alfa-slab-one-regular",
-    "jersey-10-regular",
-    "lobster-regular",
-    "shadows-into-light-regular",
-    "caveat-two"
-]
+  "'Momo Trust Display', sans-serif",
+  "'Momo Signature', cursive",
+  "'Playfair Display', serif",
+  "'Lobster Two', cursive",
+  "'Noto Serif', serif",
+  "'Saira', sans-serif",
+  "'Josefin Sans', sans-serif",
+  "'Alfa Slab One', serif",
+  "'Jersey 10', sans-serif",
+  "'Lobster', cursive",
+  "'Shadows Into Light', cursive",
+  "'Caveat', cursive"
+];
+
 var i = 0;
-console.log(i)
-// canvas display and animation:
-var cd = document.getElementById("canvas_display")
-cd.classList.add("canvas_display")
 
+// === FONT SWITCH ANIMATION ===
 var interval = setInterval(() => {
-    console.log(i, fonts[0])
-    // Name.classList.add(fonts[i]);
-    i++;
-    if (i >= fonts.length) {
-        clearInterval(interval);
-        cd.classList.add("expand-from-center")
+  Name.style.fontFamily = fonts[i];
+  i++;
+  if (i >= fonts.length) {
+    clearInterval(interval);
 
-        //canvas_display text will be visible here:
-        var credit = document.getElementById("credit")
-        credit.classList.add("show-zoom")
+    // Expand canvas
+    cd.classList.add("expand-from-center");
 
-    }
+    // Show credit text
+    setTimeout(() => {
+      credit.classList.add("show-zoom");
+    }, 800);
+  }
 }, 250);
-console.log(i)
 
+// === BACKGROUND AND SHRINK EFFECT ===
 setTimeout(() => {
-    container.classList.add(bgColorPost)
-    container.classList.remove(bgColorInit)
-    cd.classList.add("shrink-to-center")
-    Name.classList.add("hidden")
-
-    // adding smooth scrolling - Lenis
-    
+  container.classList.replace("bg-zinc-900", "bg-slate-950");
+  cd.classList.add("shrink-to-center");
+  Name.classList.add("hidden");
 }, 8000);
 
-// year variable set on current-year id:
+// === SET CURRENT YEAR ===
 var year = document.getElementById("current-year");
-var date = new Date();
-var currentYear = date.getFullYear();
-year.innerText = currentYear;
-
-
-
-console.log(initialWordWidth, fonts[0], currentYear)
+year.innerText = new Date().getFullYear();
